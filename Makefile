@@ -11,3 +11,6 @@ lint: # run_linter
 	
 build:
 	./build.sh
+	
+stop:
+	sudo fuser -k 8000/tcp

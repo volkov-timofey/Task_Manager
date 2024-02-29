@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%=b-p^tjpk3i0b+t&@)(yr&*0+zel-sb5otuns%v1_lntdl&-_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['webserver', '127.0.0.1', '.onrender.com']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
