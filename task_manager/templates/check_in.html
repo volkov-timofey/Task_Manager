@@ -1,0 +1,31 @@
+{% extends 'components/layout.html' %}
+
+{% block content %}
+
+<div class="container wrapper flex-grow-1">
+      
+
+
+      <h1 class="my-4">
+        
+Вход
+
+      </h1>
+      
+<form method="post">
+  <input type="hidden" name="csrfmiddlewaretoken" value="znctL5vPVctxYAO94G1z3IlX9voy0XSvV7J6WGrf5facBoFJ26Um2Hd1GGDkoCrK">
+
+<div class="mb-3">
+	<label class="form-label" for="id_username">Пользователь</label>
+	<input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" class="form-control" placeholder="Имя пользователя" required id="id_username">
+</div>
+<div class="mb-3">
+	<label class="form-label" for="id_password">Пароль</label>
+	<input type="password" name="password" autocomplete="current-password" class="form-control" placeholder="Пароль" required id="id_password">
+</div>
+    <input class="btn btn-primary" type="submit" value="Войти">
+</form>
+
+</div>
+
+{% endblock content %}

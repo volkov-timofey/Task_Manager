@@ -14,3 +14,6 @@ build:
 	
 stop:
 	sudo fuser -k 8000/tcp
+
+dev:
+	poetry run python manage.py runserver
