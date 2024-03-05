@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = False #os.getenv('DEBUG')
 
 ALLOWED_HOSTS = ['webserver', '127.0.0.1', '.onrender.com']
 
