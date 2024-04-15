@@ -1,8 +1,6 @@
 {% extends 'components/layout.html' %}
 {% load django_bootstrap5 %}
 {% load i18n %}
-{% bootstrap_css %}
-{% bootstrap_messages %}
 
 {% block content %}
 
@@ -10,7 +8,7 @@
       
 	<h1 class="my-4">
 
-		{% translate 'Регистрация' %}
+		{% translate "Изменение статуса" %}
 
 	</h1>
 
@@ -19,7 +17,7 @@
 
       {% bootstrap_form form %}
 
-      {% translate "Register" as button_text %}
+      {% translate "Изменить" as button_text %}
       {% bootstrap_button button_type="submit" content=button_text %}
 </form>
 

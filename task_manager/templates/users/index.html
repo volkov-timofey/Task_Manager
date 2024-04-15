@@ -1,63 +1,44 @@
 {% extends 'components/layout.html' %}
 
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% bootstrap_css %}
+{% bootstrap_messages %}
+
 {% block content %}
 
 <div class="container wrapper flex-grow-1">
 
-      <h1 class="my-4">
-        
-Пользователи
+	<h1 class="my-4">
 
-      </h1>
+		{% translate "Пользователи" %}
+
+	</h1>
       
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>Имя пользователя</th>
-      <th>Полное имя</th>
-      <th>Дата создания</th>
-      <th></th>
+      <th>{% translate "Имя пользователя" %}</th>
+      <th>{% translate "Полное имя" %}</th>
+      <th>{% translate "Дата создания" %}</th>
     </tr>
   </thead>
+  
   <tbody>
-    
+	  {% for user in users %}
       <tr>
-        <td>2</td>
-        <td>alex_kosmylev</td>
-        <td>Aleksandr edit Kosmylev</td>
-        <td>19.02.2024 07:41</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.first_name }} {{ user.last_name }}</td>
+		<td>{{ user.date_joined|date:"d.m.Y" }} {{ user.date_joined|time:"H:i" }}</td>
         <td>
-          <a href="/users/2/update/">Изменить</a>
+          <a href="{% url 'user_update' user.pk %}">{% translate "Изменить" %}</a>
           <br>
-          <a href="/users/2/delete/">Удалить</a>
+           <a href="{% url 'user_delete' user.pk %}">{% translate "Удалить" %}</a>
         </td>
       </tr>
-    
-      <tr>
-        <td>4</td>
-        <td>test</td>
-        <td>name surname</td>
-        <td>19.02.2024 08:43</td>
-        <td>
-          <a href="/users/4/update/">Изменить</a>
-          <br>
-          <a href="/users/4/delete/">Удалить</a>
-        </td>
-      </tr>
-    
-      <tr>
-        <td>63</td>
-        <td>@123</td>
-        <td>123 123</td>
-        <td>29.02.2024 04:56</td>
-        <td>
-          <a href="/users/63/update/">Изменить</a>
-          <br>
-          <a href="/users/63/delete/">Удалить</a>
-        </td>
-      </tr>
-    
+      {% endfor %}
   </tbody>
 </table>
 

@@ -1,0 +1,20 @@
+{% extends 'components/layout.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="container wrapper flex-grow-1">
+
+	<h1 class="my-4">
+
+		{% translate "Удаление метки" %}
+
+	</h1>
+
+<form method="post">{% csrf_token %}
+    <p>{% translate "Вы уверены, что хотите удалить" %} "{{ object }}"?</p>
+    {% bootstrap_button button_type="submit" content="Да, удалить" %}
+</form>
+</div>
+{% endblock %}

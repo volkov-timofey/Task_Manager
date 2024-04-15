@@ -1,0 +1,64 @@
+{% extends 'components/layout.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% bootstrap_css %}
+{% bootstrap_messages %}
+
+{% block content %}
+
+<div class="container wrapper flex-grow-1">
+      
+	<h1 class="my-4">
+
+		{% translate "Просмотр задачи" %}
+
+	</h1>
+
+	<div class="card">
+	  <div class="card-header bg-secondary text-white">
+		<h2>{{ task.title }}</h2>
+	  </div>
+	  <div class="card-body bg-light">
+		<p>{{ task.describe }}</p>
+		<hr>
+		<div class="container">
+		  <div class="row p-1">
+			<div class="col">{% translate "Автор" %}</div>
+			<div class="col">{{ task.creator }}</div>
+		  </div>
+		  <div class="row p-1">
+			<div class="col">{% translate "Исполнитель" %}</div>
+			<div class="col">{{ task.executor }}</div>
+		  </div>
+		  <div class="row p-1">
+			<div class="col">{% translate "Статус" %}</div>
+			<div class="col">{{ task.status }}</div>
+		  </div>
+		  <div class="row p-1">
+			<div class="col">{% translate "Дата создания" %}</div>
+			<div class="col">{{ task.created_at|date:"d.m.Y" }} {{ task.created_at|time:"H:i" }}</div>
+		  </div>
+		  <div class="row p-1">
+			<div class="col">
+			  <h6>{% translate "Метки" %}:</h6>
+			  <ul>
+				{% for label in task.label.all %}
+				  <li>{{ label }}</li>
+				{% endfor %}
+			  </ul>
+			</div>
+		  </div>
+		  <div class="row p-1">
+			<div class="col">
+			  <a href="{% url 'task_update' task.pk %}">{% translate "Изменить" %}</a>
+			  <br>
+			  <a href="{% url 'task_delete' task.pk %}">{% translate "Удалить" %}</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+</div>
+
+{% endblock content %}

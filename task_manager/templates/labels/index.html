@@ -1,0 +1,42 @@
+{% extends 'components/layout.html' %}
+
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="container wrapper flex-grow-1">
+
+	<h1 class="my-4">
+
+		{% translate "Метки" %}
+
+	</h1>
+<a class="btn btn-primary mb-3" href="{% url 'label_create' %}">{% translate "Создать метку" %}</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>{% translate "Имя" %}</th>
+      <th>{% translate "Дата создания" %}</th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+	  {% for label in labels %}
+      <tr>
+        <td>{{ label.id }}</td>
+        <td>{{ label.title }}</td>
+        <td>{{ label.created_at|date:"d.m.Y" }} {{ label.created_at|time:"H:i" }}</td>
+        <td>
+          <a href="{% url 'label_update' label.pk %}">{% translate "Изменить" %}</a>
+          <br>
+           <a href="{% url 'label_delete' label.pk %}">{% translate "Удалить" %}</a>
+        </td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}
