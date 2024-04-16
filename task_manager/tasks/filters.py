@@ -1,4 +1,4 @@
-from django_filters import FilterSet, BooleanFilter, ChoiceFilter
+from django_filters import FilterSet, BooleanFilter, ModelChoiceFilter
 
 from django.forms import CheckboxInput
 from django.utils.translation import gettext_lazy as _
@@ -18,13 +18,17 @@ class TaskFilter(FilterSet):
             creator = getattr(self.request, 'user', None)
             return queryset.filter(creator=creator)
         return queryset
-        
-    labels = [(label.id, label.name) for label in Label.objects.all()]
-    
+    '''  
     label = ChoiceFilter(
-        choices=labels,
-        field_name='label',
+        choices=[(label.id, label.name) for label in Label.objects.all()],
+        field_name='labels',
         label=_('Метка'),
+    )
+    '''
+    label = ModelChoiceFilter(
+        queryset=Label.objects.all(),
+        label=_('Метка'),
+        field_name='label',
     )
 
     class Meta:
