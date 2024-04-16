@@ -17,7 +17,7 @@ psycopg2-binary = "^2.9.9"
 django-bootstrap5 = "^23.4"
 python-dotenv = "^1.0.1"
 django-filter = "^24.2"
-rollbar = "^1.0.0"
+rollbar = "^0.16.3"
 
 
 [build-system]
