@@ -78,9 +78,10 @@ class UserDeleteView(SuccessMessageMixin, DeleteView):
 
     def post(self, request, *args, **kwargs):
         try:
-            return self.delete(request, *args, **kwargs)
+            self.delete(request, *args, **kwargs)
+            messages.success(request, self.success_message)
         except ProtectedError:
-            messages.error(request, self.error_message)
+            messages.error(self.request, _('Отсутствуют права доступа'))
 
         finally:
             return redirect(self.success_url)
