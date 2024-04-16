@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 class Task(models.Model):
     """Tasks."""
-    title = models.CharField(_('Имя'), max_length=100, unique=True)
+    name = models.CharField(_('Имя'), max_length=100, unique=True)
     describe = models.TextField(_('Описание'), blank=True, null=True)
     status = models.ForeignKey(
         Status,
@@ -36,4 +36,4 @@ class Task(models.Model):
     created_at = models.DateTimeField('Дата создания', auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.name
