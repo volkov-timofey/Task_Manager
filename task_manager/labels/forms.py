@@ -6,4 +6,4 @@ from task_manager.labels.models import Label
 class LabelNameForm(ModelForm):
     class Meta:
         model = Label
-        fields = ['title']
+        fields = ['name']

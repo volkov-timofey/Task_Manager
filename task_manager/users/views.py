@@ -61,7 +61,7 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
         return super().get(request, *args, **kwargs)
 
 
-class UserDeleteView(SuccessMessageMixin, DeleteView):
+class UserDeleteView(DeleteView):
     model = get_user_model()
     success_url = reverse_lazy('users')
     template_name = "users/delete.html"
