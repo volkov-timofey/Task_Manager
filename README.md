@@ -1,4 +1,5 @@
 ### Hexlet tests and linter status:
+[![Python CI](https://github.com/volkov-timofey/python-project-52/actions/workflows/pyci.yml/badge.svg)](https://github.com/volkov-timofey/python-project-52/actions/workflows/pyci.yml)
 SEE_YOU_SOON
 
 

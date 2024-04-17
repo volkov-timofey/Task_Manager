@@ -149,7 +149,8 @@ STATIC_URL = '/static/'
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
-    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
+    # Tell Django to copy static assets into a path called `staticfiles`
+    # (this is specific to Render)
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
@@ -189,7 +190,8 @@ BOOTSTRAP5 = {
     # The complete URL to the Bootstrap CSS theme file (None means no theme).
     "theme_url": None,
 
-    # Put JavaScript in the HEAD section of the HTML document (only relevant if you use bootstrap5.html).
+    # Put JavaScript in the HEAD section of the HTML document
+    # (only relevant if you use bootstrap5.html).
     'javascript_in_head': False,
 
     # Wrapper class for non-inline fields.
@@ -218,10 +220,12 @@ BOOTSTRAP5 = {
     # Class to indicate field has one or more errors (better to set this in your Django form).
     'error_css_class': '',
 
-    # Class to indicate success, meaning the field has valid input (better to set this in your Django form).
+    # Class to indicate success, meaning the field has valid input
+    # (better to set this in your Django form).
     'success_css_class': '',
 
-    # Enable or disable Bootstrap 5 server side validation classes (separate from the indicator classes above).
+    # Enable or disable Bootstrap 5 server side validation classes
+    # (separate from the indicator classes above).
     'server_side_validation': True,
 
     # Renderers (only set these if you have studied the source and understand the inner workings).
