@@ -17,7 +17,7 @@ from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.filters import TaskFilter
 
 
-class SearchResultsListView(FilterView):
+class SearchResultsListView(LoginRequiredMixin, FilterView):
     model = Task
     template_name = 'tasks/index.html'
     context_object_name = 'tasks'
@@ -54,7 +54,7 @@ class TaskCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class TaskUpdateView(SuccessMessageMixin, UpdateView):
+class TaskUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = TaskForm
     model = Task
     template_name = 'tasks/update.html'
@@ -67,7 +67,7 @@ class TaskDeleteView(SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('tasks')
     template_name = "tasks/delete.html"
     success_message = _('Задача успешно удалена')
-    error_message = _('Вы не создатель')
+    error_message = _('Задачу может удалить только ее автор')
 
     def form_valid(self, form):
         if self.object.creator == self.request.user:
@@ -80,7 +80,7 @@ class TaskDeleteView(SuccessMessageMixin, DeleteView):
             return redirect(self.success_url)
 
 
-class TaskDetailView(DetailView):
+class TaskDetailView(LoginRequiredMixin, DetailView):
     model = Task
     template_name = 'tasks/task.html'
     context_object_name = 'task'

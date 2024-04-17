@@ -11,8 +11,6 @@ from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.db.models import ProtectedError
-
 from task_manager.labels.models import Label
 from task_manager.labels.forms import LabelNameForm
 
@@ -51,12 +49,12 @@ class LabelDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     success_message = _('Метка успешно удалена')
     error_message = _('Данные используются')
 
-    def post(self, request, *args, **kwargs):
-        try:
-            self.delete(request, *args, **kwargs)
-            messages.success(request, self.success_message)
-        except ProtectedError:
-            messages.error(request, self.error_message)
+    def form_valid(self, form):
+        if not self.object.labels.all():
+            self.object.delete()
+            messages.success(self.request, self.success_message)
+            return redirect(self.success_url)
 
-        finally:
+        else:
+            messages.error(self.request, self.error_message)
             return redirect(self.success_url)

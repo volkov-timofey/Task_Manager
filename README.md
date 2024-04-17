@@ -1,14 +1,12 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/volkov-timofey/python-project-83/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/volkov-timofey/python-project-83/actions)
-[![Python CI](https://github.com/volkov-timofey/python-project-83/actions/workflows/pyci.yml/badge.svg)](https://github.com/volkov-timofey/python-project-83/actions/workflows/pyci.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4939aaceb73bd854568b/maintainability)](https://codeclimate.com/github/volkov-timofey/python-project-83/maintainability)
+SEE_YOU_SOON
 
 
 ### Information
-Page Analyzer is a site that analyzes specified pages for SEO suitability.
+TASK_MANAGER
 
 ### Demo application
-[https://page-analyzer-c72h.onrender.com/](https://page-analyzer-c72h.onrender.com/)
+
 
 ### Install
 
@@ -21,8 +19,8 @@ Page Analyzer is a site that analyzes specified pages for SEO suitability.
 
 #### Clone the repository and run application:
 ```bash
-$ git clone https://github.com/volkov-timofey/python-project-83.git
-$ cd python-project-83
+$ git clone https://github.com/volkov-timofey/python-project-52.git
+$ cd python-project-52
 $ make build
 $ make start
 ```

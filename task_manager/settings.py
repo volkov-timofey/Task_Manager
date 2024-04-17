@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
-    
+
 ]
 
 ROLLBAR = {
@@ -161,7 +161,7 @@ if not DEBUG:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LANGUAGES = [
-    ('ru','Russian'),
+    ('ru', 'Russian'),
     ('en', 'English'),
 ]
 
@@ -225,7 +225,7 @@ BOOTSTRAP5 = {
     'server_side_validation': True,
 
     # Renderers (only set these if you have studied the source and understand the inner workings).
-    'formset_renderers':{
+    'formset_renderers': {
         'default': 'django_bootstrap5.renderers.FormsetRenderer',
     },
     'form_renderers': {

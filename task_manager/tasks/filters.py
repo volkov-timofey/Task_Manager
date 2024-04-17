@@ -18,14 +18,8 @@ class TaskFilter(FilterSet):
             creator = getattr(self.request, 'user', None)
             return queryset.filter(creator=creator)
         return queryset
-    '''  
-    label = ChoiceFilter(
-        choices=[(label.id, label.name) for label in Label.objects.all()],
-        field_name='labels',
-        label=_('Метка'),
-    )
-    '''
-    label = ModelChoiceFilter(
+
+    choice_label = ModelChoiceFilter(
         queryset=Label.objects.all(),
         label=_('Метка'),
         field_name='labels',
@@ -33,4 +27,4 @@ class TaskFilter(FilterSet):
 
     class Meta:
         model = Task
-        fields = ['status', 'executor', 'labels', 'my_tasks']
+        fields = ['status', 'executor', 'choice_label', 'my_tasks']
