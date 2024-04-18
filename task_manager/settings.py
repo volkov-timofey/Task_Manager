@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', False)
+DEBUG = os.getenv('DEBUG', True)
 
 ROLLBAR_TOKEN = os.getenv('ROLLBAR_TOKEN')
 
@@ -155,8 +155,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  #
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  #
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  #
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  #
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
