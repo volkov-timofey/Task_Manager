@@ -104,7 +104,6 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-
 if 'test' in sys.argv:
     DATABASES = {
         'default': {
