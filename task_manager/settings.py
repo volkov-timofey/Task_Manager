@@ -33,10 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
-
-if 'test' in sys.argv:
-    DEBUG = False
+DEBUG = os.getenv('DEBUG', False)
 
 ROLLBAR_TOKEN = os.getenv('ROLLBAR_TOKEN')
 
