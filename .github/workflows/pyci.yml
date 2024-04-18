@@ -39,4 +39,4 @@ jobs:
       - name: Run linter and unittest
         run: |
           make lint
-          make test
+          poetry run python manage.py test --debug-mode
