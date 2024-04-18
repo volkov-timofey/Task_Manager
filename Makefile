@@ -19,4 +19,7 @@ dev:
 	poetry run python manage.py runserver
 
 test:
-	poetry run python manage.py test
+	poetry run coverage run --source='.' manage.py test
+
+test-report:
+	poetry run coverage report
