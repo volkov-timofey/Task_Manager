@@ -2,7 +2,7 @@ databases:
   - name: db_page_analyzer
     plan: free
     databaseName: db_page_analyzer
-    user: Volkov Timofey
+    user: work
 
 services:
   - type: web
