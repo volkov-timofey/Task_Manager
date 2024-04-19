@@ -1,8 +1,8 @@
 ### Hexlet tests and linter status:
 [![hexlet-check](https://github.com/volkov-timofey/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/volkov-timofey/python-project-52/actions/workflows/hexlet-check.yml)
 [![Python CI](https://github.com/volkov-timofey/python-project-52/actions/workflows/pyci.yml/badge.svg)](https://github.com/volkov-timofey/python-project-52/actions/workflows/pyci.yml)
-
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/15f3d73677bdedf49fd1/maintainability)](https://codeclimate.com/github/volkov-timofey/python-project-52/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/15f3d73677bdedf49fd1/test_coverage)](https://codeclimate.com/github/volkov-timofey/python-project-52/test_coverage)
 
 ### Information
 TASK_MANAGER
