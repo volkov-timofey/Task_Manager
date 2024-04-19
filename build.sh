@@ -9,4 +9,5 @@ make install
 poetry run python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
+poetry run python manage.py makemigrations
 poetry run python manage.py migrate
