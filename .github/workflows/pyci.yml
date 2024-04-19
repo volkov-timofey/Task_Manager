@@ -28,8 +28,17 @@ jobs:
           
       - name: Django Testing
         env:
-          DEBUG: ${{ secrets.DEBUG }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DEBUG: ${{ vars.MY_DEBUG }}
+          SECRET_KEY: ${{ vars.MY_SECRET_KEY }}
+          DATABASE_URL: ${{ vars.MY_DATABASE_URL }}
         run: |
           make test
+          
+      - name: Test coverage
+        uses: paambaati/codeclimate-action@v3.1.1
+        if: github.ref_name == 'main'
+        env:
+          CC_TEST_REPORTER_ID: ${{ vars.MY_CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage-xml
+          debug: true

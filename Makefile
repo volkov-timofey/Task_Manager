@@ -23,3 +23,6 @@ test:
 
 test-report:
 	poetry run coverage report
+
+test-coverage-xml:
+	poetry run coverage xml -o coverage.xml
