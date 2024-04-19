@@ -9,16 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # we want to test our package on several versions of Python
         python-version: [3.10.12]
+    env:
+      DATABASE_URL: ${{ vars.DATABASE_URL }}
+      SECRET_KEY: ${{ vars.SECRET_KEY }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-        # make depends on poetry
-      
+        
+      - name: Set up Postgresql
+        uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '14'
+          postgresql db: postgres
+          postgresql user: postgres
+          postgresql password: postgres
+
+      - name: Start Postgresql
+        run: sudo systemctl start postgresql
       - name: Install dependencies
         run: |
           pip install poetry
@@ -26,4 +37,4 @@ jobs:
       - name: Run linter and unittest
         run: |
           make lint
-          poetry run python manage.py test --debug-mode
+          make test
