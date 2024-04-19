@@ -18,17 +18,18 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       
-      - uses: actions/checkout@v2  
-      - name: Django CI
-        uses: UKnowWhoIm/django-test-action@v0.6
-        with:
-            settings-dir-path: "task_manager"
-
       - name: Install dependencies
         run: |
           pip install poetry
           make install
-      - name: Run linter and unittest
+      - name: Run linter
         run: |
           make lint
+          
+      - name: Django Testing
+        env:
+          DEBUG: ${{ secrets.DEBUG }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
           make test
