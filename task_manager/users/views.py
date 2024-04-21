@@ -31,8 +31,8 @@ class UserCreateView(SuccessMessageMixin, CreateView):
     model = get_user_model()
     template_name = 'users/registration.html'
     success_url = reverse_lazy('login')
-    success_message = _('Пользователь успешно зарегистрирован')
-    error_message = _('Некорректные данные')
+    success_message = _('User created successfully')
+    error_message = _('Uncorrect data, please try again')
 
     def form_invalid(self, form):
         messages.error(self.request, self.error_message)
@@ -44,8 +44,8 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     model = get_user_model()
     template_name = 'users/update.html'
     success_url = reverse_lazy('users')
-    success_message = _('Пользователь успешно изменен')
-    error_message = _('Некорректные данные')
+    success_message = _('User data changed successfully')
+    error_message = _('Uncorrect data, please try again')
 
     def form_invalid(self, form):
         messages.error(self.request, self.error_message)
@@ -55,7 +55,7 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
         user_id = self.request.user.id
         url_id = kwargs.get('pk')
         if url_id != user_id:
-            messages.error(self.request, _('Отсутствуют права доступа'))
+            messages.error(self.request, _('No access rights'))
             return redirect(reverse_lazy('users'))
 
         return super().get(request, *args, **kwargs)
@@ -65,13 +65,13 @@ class UserDeleteView(DeleteView):
     model = get_user_model()
     success_url = reverse_lazy('users')
     template_name = "users/delete.html"
-    success_message = _('Пользователь успешно удален')
+    success_message = _('User data deleted successfully')
 
     def get(self, request, *args, **kwargs):
         user_id = self.request.user.id
         url_id = kwargs.get('pk')
         if url_id != user_id:
-            messages.error(self.request, _('Отсутствуют права доступа'))
+            messages.error(self.request, _('No access rights'))
             return redirect(reverse_lazy('users'))
 
         return super().get(request, *args, **kwargs)
@@ -81,7 +81,7 @@ class UserDeleteView(DeleteView):
             self.delete(request, *args, **kwargs)
             messages.success(request, self.success_message)
         except ProtectedError:
-            messages.error(self.request, _('Отсутствуют права доступа'))
+            messages.error(self.request, _('No access rights'))
 
         finally:
             return redirect(self.success_url)

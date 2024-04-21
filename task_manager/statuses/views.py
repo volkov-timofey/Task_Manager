@@ -32,7 +32,7 @@ class StatusCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Status
     template_name = 'statuses/create.html'
     success_url = reverse_lazy('statuses')
-    success_message = _('Статус успешно создан')
+    success_message = _('Status created successfully')
 
 
 class StatusUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
@@ -40,15 +40,15 @@ class StatusUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Status
     template_name = 'statuses/update.html'
     success_url = reverse_lazy('statuses')
-    success_message = _('Статус успешно изменен')
+    success_message = _('Status changed successfully')
 
 
 class StatusDelete(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Status
     success_url = reverse_lazy('statuses')
     template_name = "statuses/delete.html"
-    success_message = _('Статус успешно удален')
-    error_message = _('Данные используются')
+    success_message = _('Status deleted successfully')
+    error_message = _('Status used in a task cannot be deleted')
 
     def post(self, request, *args, **kwargs):
         try:

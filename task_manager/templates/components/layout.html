@@ -1,15 +1,18 @@
 {% load django_bootstrap5 %}
 {% load i18n %}
-{% bootstrap_css %}
 
 <!DOCTYPE html>
 
-<html lang="ru-ru">
+<html lang="{% get_current_language as LANGUAGE_CODE %}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% translate "Менеджер задач" %}</title>
+    <title>{% translate "Task Manager" %}</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
+  
+	{% bootstrap_css %}
+    {% bootstrap_javascript %}
+	
     {% include "components/navigation.html" %}
 	{% bootstrap_messages %}
 	<main class="flex-grow-1">

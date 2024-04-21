@@ -10,7 +10,7 @@ from task_manager.labels.models import Label
 class TaskFilter(FilterSet):
     my_tasks = BooleanFilter(widget=CheckboxInput,
                              method='filter_creator',
-                             label=_('Только свои задачи'))
+                             label=_('Only my tasks'))
 
     def filter_creator(self, queryset, *args, **kwargs):
         is_my_tasks = args[-1]
@@ -21,7 +21,7 @@ class TaskFilter(FilterSet):
 
     choice_label = ModelChoiceFilter(
         queryset=Label.objects.all(),
-        label=_('Метка'),
+        label=_('Label'),
         field_name='labels',
     )
 

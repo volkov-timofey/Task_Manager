@@ -2,8 +2,6 @@
 
 {% load django_bootstrap5 %}
 {% load i18n %}
-{% bootstrap_css %}
-{% bootstrap_messages %}
 
 {% block content %}
 
@@ -11,7 +9,7 @@
 
 	<h1 class="my-4">
 
-		{% translate "Пользователи" %}
+		{% translate "Users" %}
 
 	</h1>
       
@@ -19,9 +17,9 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>{% translate "Имя пользователя" %}</th>
-      <th>{% translate "Полное имя" %}</th>
-      <th>{% translate "Дата создания" %}</th>
+      <th>{% translate "User name" %}</th>
+      <th>{% translate "Full name" %}</th>
+      <th>{% translate "Date created" %}</th>
     </tr>
   </thead>
   
@@ -33,9 +31,9 @@
         <td>{{ user.first_name }} {{ user.last_name }}</td>
 		<td>{{ user.date_joined|date:"d.m.Y" }} {{ user.date_joined|time:"H:i" }}</td>
         <td>
-          <a href="{% url 'user_update' user.pk %}">{% translate "Изменить" %}</a>
+          <a href="{% url 'user_update' user.pk %}">{% translate "Change" %}</a>
           <br>
-           <a href="{% url 'user_delete' user.pk %}">{% translate "Удалить" %}</a>
+           <a href="{% url 'user_delete' user.pk %}">{% translate "Delete" %}</a>
         </td>
       </tr>
       {% endfor %}

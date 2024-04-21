@@ -5,10 +5,10 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/15f3d73677bdedf49fd1/test_coverage)](https://codeclimate.com/github/volkov-timofey/python-project-52/test_coverage)
 
 ### Information
-TASK_MANAGER
+Page Analyzer is a site that analyzes specified pages for SEO suitability.
 
 ### Demo application
-https://task-manager-xnt6.onrender.com
+[https://task-manager-xnt6.onrender.com/](https://task-manager-xnt6.onrender.com)
 
 ### Install
 

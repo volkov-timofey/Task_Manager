@@ -1,8 +1,7 @@
 {% extends 'components/layout.html' %}
+
 {% load django_bootstrap5 %}
 {% load i18n %}
-{% bootstrap_css %}
-{% bootstrap_messages %}
 
 {% block content %}
 
@@ -10,7 +9,7 @@
       
 	<h1 class="my-4">
 
-		{% translate "Просмотр задачи" %}
+		{% translate "Detail task" %}
 
 	</h1>
 
@@ -23,24 +22,24 @@
 		<hr>
 		<div class="container">
 		  <div class="row p-1">
-			<div class="col">{% translate "Автор" %}</div>
+			<div class="col">{% translate "Creator" %}</div>
 			<div class="col">{{ task.creator }}</div>
 		  </div>
 		  <div class="row p-1">
-			<div class="col">{% translate "Исполнитель" %}</div>
+			<div class="col">{% translate "Executor" %}</div>
 			<div class="col">{{ task.executor }}</div>
 		  </div>
 		  <div class="row p-1">
-			<div class="col">{% translate "Статус" %}</div>
+			<div class="col">{% translate "Status" %}</div>
 			<div class="col">{{ task.status }}</div>
 		  </div>
 		  <div class="row p-1">
-			<div class="col">{% translate "Дата создания" %}</div>
+			<div class="col">{% translate "Date created" %}</div>
 			<div class="col">{{ task.created_at|date:"d.m.Y" }} {{ task.created_at|time:"H:i" }}</div>
 		  </div>
 		  <div class="row p-1">
 			<div class="col">
-			  <h6>{% translate "Метки" %}:</h6>
+			  <h6>{% translate "Labels" %}:</h6>
 			  <ul>
 				{% for label in task.labels.all %}
 				  <li>{{ label }}</li>
@@ -50,9 +49,9 @@
 		  </div>
 		  <div class="row p-1">
 			<div class="col">
-			  <a href="{% url 'task_update' task.pk %}">{% translate "Изменить" %}</a>
+			  <a href="{% url 'task_update' task.pk %}">{% translate "Change" %}</a>
 			  <br>
-			  <a href="{% url 'task_delete' task.pk %}">{% translate "Удалить" %}</a>
+			  <a href="{% url 'task_delete' task.pk %}">{% translate "Delete" %}</a>
 			</div>
 		  </div>
 		</div>

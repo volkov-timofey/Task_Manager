@@ -1,4 +1,5 @@
 {% extends 'components/layout.html' %}
+
 {% load django_bootstrap5 %}
 {% load i18n %}
 
@@ -8,13 +9,13 @@
 
 	<h1 class="my-4">
 
-		{% translate "Удаление статуса" %}
+		{% translate "Delete status" %}
 
 	</h1>
 
 <form method="post">{% csrf_token %}
-    <p>{% translate "Вы уверены, что хотите удалить" %} "{{ object }}"?</p>
-    {% bootstrap_button button_type="submit" content="Да, удалить" %}
+    <p>{% translate "Are you sure you want to delete" %} "{{ object }}"?</p>
+    {% bootstrap_button button_type="submit" content={% translate "Yes, delete" %} %}
 </form>
 </div>
 {% endblock %}

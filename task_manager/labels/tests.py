@@ -83,7 +83,8 @@ class BaseTest(TestCase):
         response_redirect = self.client.post(f'/labels/{label_id}/delete/')
         response = self.client.get('/labels/')
         content = response.content.decode()
-        self.assertIn('Данные используются', content)
+        self.assertIn('Метка используемая в задаче, не может быть удалена',
+                      content)
         self.assertRedirects(response_redirect, '/labels/', 302, 200)
 
         task_id = Task.objects.get(name='task_action').id

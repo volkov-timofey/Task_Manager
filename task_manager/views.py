@@ -22,7 +22,7 @@ class HomePageView(TemplateView):
 class LoginUserView(SuccessMessageMixin, LoginView):
     form_class = AuthenticationForm
     template_name = 'login.html'
-    success_message = _('Вы залогинены')
+    success_message = _('You have successfully logged in')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -34,7 +34,7 @@ class LoginUserView(SuccessMessageMixin, LoginView):
 
 
 class LogoutUserView(LogoutView):
-    success_message = _('Вы разлогинены')
+    success_message = _('You have successfully logged out')
 
     def get_success_url(self):
         return reverse_lazy('index')

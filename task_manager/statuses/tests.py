@@ -79,7 +79,8 @@ class BaseTest(TestCase):
         response_redirect = self.client.post(f'/statuses/{status_id}/delete/')
         response = self.client.get('/statuses/')
         content = response.content.decode()
-        self.assertIn('Данные используются', content)
+        self.assertIn('Статус используемый в задаче, не может быть удален',
+                      content)
         self.assertRedirects(response_redirect, '/statuses/', 302, 200)
 
         task_id = Task.objects.get(name='task_action').id

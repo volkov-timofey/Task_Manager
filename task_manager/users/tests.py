@@ -46,7 +46,8 @@ class BaseTest(TestCase):
                                                        "password1": "ptest",
                                                        "password2": "ptest"})
         content = response.content.decode()
-        self.assertIn('Некорректные данные', content)
+        self.assertIn('Некорректные данные, пожалуйста попробуйте снова',
+                      content)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'users/registration.html')
 
