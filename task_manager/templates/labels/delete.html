@@ -15,7 +15,8 @@
 
 <form method="post">{% csrf_token %}
     <p>{% translate "Are you sure you want to delete" %} "{{ object }}"?</p>
-    {% bootstrap_button button_type="submit" content={% translate "Yes, delete" %} %}
+	{% translate "Yes, delete" as button_text %}
+    {% bootstrap_button button_type="submit" content=button_text %}
 </form>
 </div>
 {% endblock %}

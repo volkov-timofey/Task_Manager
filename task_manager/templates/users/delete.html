@@ -7,6 +7,12 @@
 {% block content %}
 <div class="container wrapper flex-grow-1">
 
+	<h1 class="my-4">
+
+		{% translate "Delete user data" %}
+
+	</h1>
+
 <form method="post">{% csrf_token %}
     <p>{% translate "Are you sure you want to delete" %} "{{ object.username }}"?</p>
 	{% translate "Yes, delete" as button_text %}

@@ -177,7 +177,7 @@ msgstr "Удаление метки"
 #: task_manager/templates/labels/delete.html:17
 #: task_manager/templates/statuses/delete.html:17
 #: task_manager/templates/tasks/delete.html:17
-#: task_manager/templates/users/delete.html:11
+#: task_manager/templates/users/delete.html:17
 msgid "Are you sure you want to delete"
 msgstr "Вы уверены, что хотите удалить"
 
@@ -279,3 +279,14 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:37
 msgid "You have successfully logged out"
 msgstr "Вы разлогинены"
+
+#: task_manager/templates/labels/delete.html:18
+#: task_manager/templates/statuses/delete.html:18
+#: task_manager/templates/tasks/delete.html:18
+#: task_manager/templates/users/delete.html:18
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: task_manager/templates/users/delete.html:12
+msgid "Delete user data"
+msgstr "Удалить данные пользователя"
