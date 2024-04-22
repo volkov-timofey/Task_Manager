@@ -122,9 +122,13 @@ msgid "Users"
 msgstr "Пользователи"
 
 #: task_manager/templates/components/navigation.html:20
-#: task_manager/templates/login.html:8 task_manager/templates/login.html:13
+#: task_manager/templates/login.html:8
 msgid "Sign In"
 msgstr "Вход"
+
+#: task_manager/templates/login.html:13
+msgid "Log In"
+msgstr "Войти"
 
 #: task_manager/templates/components/navigation.html:23
 #: task_manager/templates/users/registration.html:12
