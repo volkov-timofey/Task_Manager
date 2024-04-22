@@ -292,3 +292,11 @@ msgstr "Да, удалить"
 #: task_manager/templates/users/delete.html:12
 msgid "Delete user data"
 msgstr "Удалить данные пользователя"
+
+#: task_manager/templates/index.html:11
+msgid "Application Task Manager"
+msgstr "Приложение Менеджер задач"
+
+#: task_manager/templates/index.html:13
+msgid "Task management system similar to redmine.org. It allows you to set tasks, assign performers and change their statuses. To work with the system, registration and authentication are required."
+msgstr "Cистема управления задачами, подобная redmine.org. Она позволяет ставить задачи, назначать исполнителей и менять их статусы. Для работы с системой требуется регистрация и аутентификация."
