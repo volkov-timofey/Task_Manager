@@ -132,9 +132,12 @@ msgstr "Войти"
 
 #: task_manager/templates/components/navigation.html:23
 #: task_manager/templates/users/registration.html:12
-#: task_manager/templates/users/registration.html:21
 msgid "Sign Up"
 msgstr "Регистрация"
+
+#: task_manager/templates/users/registration.html:21
+msgid "Sign Up "
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/components/navigation.html:30
 #: task_manager/templates/statuses/index.html:12
