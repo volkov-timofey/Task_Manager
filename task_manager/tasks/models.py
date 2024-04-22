@@ -30,10 +30,10 @@ class Task(models.Model):
         blank=True,
         null=True
     )
-    labels = models.ManyToManyField(Label, verbose_name='Labels',
+    labels = models.ManyToManyField(Label, verbose_name=_('Labels'),
                                     blank=True, related_name='labels',
                                     null=True)
-    created_at = models.DateTimeField('Date created', auto_now_add=True)
+    created_at = models.DateTimeField(_('Date created'), auto_now_add=True)
 
     def __str__(self):
         return self.name

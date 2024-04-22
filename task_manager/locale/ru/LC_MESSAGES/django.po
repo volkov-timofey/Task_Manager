@@ -33,6 +33,7 @@ msgstr "Имя"
 #: task_manager/templates/tasks/index.html:33
 #: task_manager/templates/tasks/task.html:37
 #: task_manager/templates/users/index.html:22
+#: task_manager/tasks/models.py:36
 msgid "Date created"
 msgstr "Дата создания"
 
@@ -147,6 +148,7 @@ msgstr "Статусы"
 #: task_manager/templates/components/navigation.html:33
 #: task_manager/templates/labels/index.html:12
 #: task_manager/templates/tasks/task.html:42
+#: task_manager/tasks/models.py:33
 msgid "Labels"
 msgstr "Метки"
 
