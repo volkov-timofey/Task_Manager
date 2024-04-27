@@ -22,7 +22,7 @@ Application "Task Manager" is a task management system similar to [redmine.org](
 #### Clone the repository and run application:
 ```bash
 $ git clone https://github.com/volkov-timofey/Task_Manager.git
-$ cd python-project-52
+$ cd Task_Manager
 $ make build
 $ make start
 ```
