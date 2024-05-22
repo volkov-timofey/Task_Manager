@@ -7,8 +7,8 @@
 ### Information
 Application "Task Manager" is a task management system similar to [redmine.org](http://www.redmine.org/). It allows you to set tasks, assign performers and change their statuses. To work with the system, registration and authentication are required.
 
-### Demo application
-[https://task-manager-xnt6.onrender.com/](https://task-manager-xnt6.onrender.com)
+<!-- ### Demo application
+[https://task-manager-xnt6.onrender.com/](https://task-manager-xnt6.onrender.com) -->
 
 ### Install
 
